@@ -1,4 +1,4 @@
-package com.vineet.ds;
+package com.vineet.search;
 
 public class LinearSearch {
 	
