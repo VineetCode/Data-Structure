@@ -3,25 +3,22 @@ package com.vineet.sort;
 public class InsertionSort {
 	
 public static int[] insertionSort(int[] input, int length){
-		
-		for(int i=0;i<length-1;i++){
-			
-			for(int j=0;j<length-1-i;j++){
-				if(input[j]>=input[j+1]){
-					swap(input[j],input[j+1]);
-				}
-			}//inner-for-loop
+		int key,j;
+		for(int i=1;i<length;i++){
+			key=input[i];
+			j=i-1;
+			while(j>=0 && input[j]>key){
+				input[j+1]=input[j];
+				j=j-1;
+			}//end of while loop
+			input[j+1]=key;	
 		}//outer-for-loop
 		return input;
 	}//end of bubble sort method
 
-  public static void swap(int a, int b){
-	  int temp=a;
-	  a=b;
-	  b=temp;
-  }
+ 
 	public static void main(String[] args) {
-		int[] input={10,30,20,40,35,75,55};
+		int[] input={10,30,20,40,35,75,5};
 		int length=input.length;
 		int[] sorted=insertionSort(input, length);
 		for(int i=0;i<sorted.length;i++)
