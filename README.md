@@ -1,6 +1,6 @@
 # Data-Structure
 Only for data structure related program 
-All the data structure implemention is there by using Java
+All the data structure implemention is available by using Java Programming Language.
 1. Stack
 2. Queue
 3. Single Linked List
