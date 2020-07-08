@@ -14,17 +14,27 @@ public class BSTTest {
 		root=bst.insert(root,7);
 		
 		System.out.println("Root Node ::"+root.data);
-		
 		bst.display(root);
 		
 		//root=bst.delete(root,4);
-		
+		//bst.display(root);
+		//root=bst.delete(root, 6);
 		//bst.display(root);
 		
-		root=bst.delete(root, 6);
+		System.out.println(bst.isNodePresent(root,7));
 		
-	   
-		bst.display(root);
+		Node parentNode=bst.getParentNode(root,16);
+		if(parentNode!=null)
+			System.out.println(parentNode.data);
+		else
+			System.out.println("Parent Node doesn't exits!!!");
+		
+		Node siblingNode=bst.getParentNode(root,7);
+		if(siblingNode!=null)
+			System.out.println(siblingNode.data);
+		else
+			System.out.println("Sibling Node doesn't exits!!!");
+		
 		
 
 	}//end of main() method

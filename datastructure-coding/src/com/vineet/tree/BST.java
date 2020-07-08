@@ -114,6 +114,69 @@ public class BST {
 		}
 		
 	}// end of postOrderTraversal() method
+	
+	public boolean isNodePresent(Node root, int val){
+		if(root==null)
+			return false;
+		boolean isPresent=false;
+		
+		while(root!=null){
+			if(val < root.data){
+				root=root.left;
+			}else if(val> root.data){
+				root=root.right;
+			}else{
+				isPresent=true;
+				break;
+			}
+		}//end of while
+		
+		return isPresent;
+	}//end of isNodePresent() method 
+	
+	public Node getParentNode(Node root,int val){
+		if(root==null)
+			return null;
+		Node getParent=null;
+		
+		while(root!=null){
+			if(val <root.data){
+				getParent=root;
+				root=root.left;
+			}else if(val >root.data){
+				getParent=root;
+				root=root.right;
+			}else{
+				break;
+			}
+		}//end of while loop
+		
+		return getParent;
+	}//end of getParentNode() method
+	
+	public Node getSiblingNode(Node root,int val){
+		if(root==null || root.data==val)
+			return null;
+		
+	    Node parentNode=null;
+	    while(root!=null){
+	    	if(val<root.data){
+	    		parentNode=root;
+	    		root=root.left;	    		
+	    	}else if(val>root.data){
+	    		parentNode=root;
+	    		root=root.right;
+	    	}else{
+	    		break;
+	    	}
+	    }//end of while-loop;
+	    if(parentNode.left!=null && val==parentNode.left.data)
+	    	 return parentNode.right;
+	    if(parentNode.right!=null && val==parentNode.right.data)
+	    	return parentNode.left;
+	    
+		return null;
+	}//end of getSiblingNode() method
 
 
 }// end of BST class
